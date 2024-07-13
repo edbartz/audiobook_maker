@@ -1,6 +1,8 @@
 > **Project is currently on hold as of 12/20/2023, but this is one I'll be coming back to in a little bit.**
 
 # Audiobook Maker
+This version of Jarod's Audiobook Maker adds a replacement word list feature.  This feature allows you to create a list of words, that replace existing words, that the TTS pronounces incorrectly.  The easiest way to use it, is install Jarods version, download audio_book_app3a.py, and start_package3a.bat.  Then just run start_package3a.bat.  Add words to list, save the list, and start making audiobooks.
+
 This repo utilizes SOTA AI voice generation tools such as Tortoise and RVC to generate the audio required to make an audiobook.  To my knowledge, Tortoise and RVC combined replicates speech in a way that is currently unparalleled to anything else that exists out there that is open-sourced and able to be ran locally. *Eleven labs is absolutely fantastic... one of the best IMO, but it's not "free" and it's not open-source*
 
 There are two ways to install this, via Package or Manually.  If you don't have any 
