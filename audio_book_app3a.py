@@ -562,7 +562,7 @@ class AudiobookMaker(QMainWindow):
         paragraph = paragraph.replace(r'   ', ' ')
         paragraph = paragraph.replace(r'  ', ' ')
         
-                sentence_list = [s.strip() for s in paragraph.split('*%') if (s.strip()!='.' and s.strip()!='')]
+        sentence_list = [s.strip() for s in paragraph.split('*%') if (s.strip()!='.' and s.strip()!='')]
         return sentence_list
         
     def NewLoadTheTextFile(file_path) -> list:
