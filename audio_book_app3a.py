@@ -540,6 +540,8 @@ class AudiobookMaker(QMainWindow):
         self.media_player.play()
 
     def Paragraph2Sentence(self,paragraph) -> list:
+        #Remove non ascii characters
+        paragraph = re.sub(r'[^\x00-\x7f]',r'', paragraph)
         # Replace newline with space.  Replace unnecessary characters with nothing.
         paragraph = re.sub('\n|-', ' ', re.sub('\[|\]|\*|\\|\<|\>|\"', '', paragraph))
         
@@ -554,8 +556,13 @@ class AudiobookMaker(QMainWindow):
         #paragraph = paragraph.replace(r'!', '!*%')
         #paragraph = paragraph.replace(r'?', '?*%')
         paragraph = paragraph.replace(r'. ', '.*%')
+        #This removes excess spaces.  These occur with indented lines, and book scans
+        paragraph = paragraph.replace(r'     ', ' ')
+        paragraph = paragraph.replace(r'    ', ' ')
+        paragraph = paragraph.replace(r'   ', ' ')
+        paragraph = paragraph.replace(r'  ', ' ')
         
-        sentence_list = [s.strip() for s in paragraph.split('*%') if (s.strip()!='.' and s.strip()!='')]
+                sentence_list = [s.strip() for s in paragraph.split('*%') if (s.strip()!='.' and s.strip()!='')]
         return sentence_list
         
     def NewLoadTheTextFile(file_path) -> list:
